@@ -59,7 +59,8 @@ public class RecordFragment extends TableFragment {
 
     private void setupList(int pageIndex) {
 
-        UserService.getInstance().getNormalList(pageIndex, 20)
+        //UserService.getInstance().getNormalList(pageIndex, 20)
+        UserService.getInstance().getOrdersList(2,pageIndex,24, 20)
                    .subscribeOn(Schedulers.io())
                    .observeOn(AndroidSchedulers.mainThread())
                    .subscribe(new TableNetResponseObserver<>(this));

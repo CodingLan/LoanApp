@@ -24,7 +24,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.protobuf.ProtoConverterFactory;
 
@@ -37,7 +37,7 @@ public class RetrofitUtil {
     String TAG = "RetrofitUtil";
 
     private static boolean PRINT_LOG = false;
-    private static String BASE_URL;
+    private static String BASE_URL="https://c2capi.58coin.com";
 
     //币币
     private Retrofit mRetrofit = null;
@@ -53,6 +53,7 @@ public class RetrofitUtil {
     }
 
     private RetrofitUtil() {
+
         mOkHttpClient = getOkHttpClient("coin", 10, 15, 15);
         mRetrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)

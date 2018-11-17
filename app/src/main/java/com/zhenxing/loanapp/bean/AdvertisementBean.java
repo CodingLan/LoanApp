@@ -1,14 +1,18 @@
-package com.zhenxing.loanapp.base;
+package com.zhenxing.loanapp.bean;
 
 import android.text.TextUtils;
+
+import com.zhenxing.loanapp.http.TBPage;
+
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by lxq_workspace on 2018/4/3.
  * 广告Bean
  */
 
-public class AdvertisementBean implements Serializable {
+public class AdvertisementBean  implements Serializable {
 
     private long id;
 
@@ -340,4 +344,5 @@ public class AdvertisementBean implements Serializable {
     public void setIsOnline(int isOnline) {
         this.isOnline = isOnline;
     }
+
 }

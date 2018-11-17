@@ -38,5 +38,12 @@ public static final int *;
     public static ** valueOf(java.lang.String);
 }
 
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+
 -keep class com.lcodecorex.tkrefreshlayout.**{*;}
 -dontwarn com.lcodecorex.tkrefreshlayout.**
+
+-dontwarn okio.**
+-dontwarn rx.**
+-dontwarn com.google.protobuf.**

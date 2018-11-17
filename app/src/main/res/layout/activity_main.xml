@@ -11,7 +11,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/bannerView"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
@@ -20,14 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/bannerView" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="ddddddd"
-            android:textColor="#ff0000"
-            android:textSize="40sp" />
     </RelativeLayout>
 
 </layout>
