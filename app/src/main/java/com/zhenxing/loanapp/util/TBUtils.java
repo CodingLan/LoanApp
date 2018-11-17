@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.Build.VERSION;
 import android.text.TextUtils;
 
+import com.zhenxing.loanapp.MyApplication;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -20,16 +22,16 @@ public class TBUtils {
 
     private TBUtils() {}
 
-   /* *//**
+    /**
      * 通过资源获取字符
      *
      * @param resId
      * @param formatArgs
      * @return
-     *//*
+     */
     public static String getString(int resId, Object... formatArgs) {
-        return getString(TBApplication.getInstance(), resId, formatArgs);
-    }*/
+        return getString(MyApplication.getInstance(), resId, formatArgs);
+    }
 
     /**
      * 通过资源获取字符
@@ -84,7 +86,7 @@ public class TBUtils {
         return sb.toString();
     }
 
-   /* *//**
+    /* *//**
      * 拷贝字符到剪切板
      *
      * @param text
@@ -96,6 +98,7 @@ public class TBUtils {
         cm.setText(text);
     }
 */
+
     /**
      * 检查版本更新. 使用x.y.z格式
      * 如果服务器版本大于本地版本则返回true.

@@ -6,5 +6,8 @@
     <color name="white">#ffffff</color>
     <color name="text_title">#333333</color>
     <color name="line_bg">#EFF2F5</color>
-
+    <color name="toast_color">#B2111522</color>
+    <color name="text_desc">#B1BFD6</color>
+    <color name="color_depth_amount">#899dbe</color>
+    <color name="text_content">#666666</color>
 </resources>

@@ -10,11 +10,19 @@ import com.umeng.commonsdk.UMConfigure;
  * Description
  */
 public class MyApplication extends Application {
+
+    private static MyApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        UMConfigure.init( this,UMConfigure.DEVICE_TYPE_PHONE,"");
+        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
 
+        instance = this;
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+    }
+
+    public static MyApplication getInstance() {
+        return instance;
     }
 }
