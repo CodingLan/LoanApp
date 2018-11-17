@@ -21,6 +21,14 @@
             android:layout_height="match_parent"
             android:layout_below="@id/bannerView"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="ddddddd"
+            android:textSize="40sp"
+            android:textColor="#ff0000"
+            android:gravity="center"
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
 </layout>

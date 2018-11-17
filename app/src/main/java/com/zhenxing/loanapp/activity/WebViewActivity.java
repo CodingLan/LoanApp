@@ -1,6 +1,5 @@
 package com.zhenxing.loanapp.activity;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
@@ -21,18 +20,17 @@ import android.widget.TextView;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.zhenxing.loanapp.R;
+import com.zhenxing.loanapp.base.BaseActivity;
 import com.zhenxing.loanapp.util.IntentUtil;
 import com.zhenxing.loanapp.util.TBUtils;
 import com.zhenxing.loanapp.view.FixTwinklingRefreshLayout;
-
-import static java.security.AccessController.getContext;
 
 /**
  * 公用webview
  * Created by xtdhwl on 20/10/2017.
  */
 
-public class WebviewActivity extends Activity {
+public class WebViewActivity extends BaseActivity {
 
     private WebView webView;
     /**
@@ -272,7 +270,7 @@ public class WebviewActivity extends Activity {
         params.putString("url", url);
         params.putString("title", title);
         params.putBoolean("updateTitle", updateTitle);
-        IntentUtil.start(activity, WebviewActivity.class, params);
+        IntentUtil.start(activity, WebViewActivity.class, params);
     }
 
     /**
@@ -291,6 +289,6 @@ public class WebviewActivity extends Activity {
         params.putBoolean("updateTitle", updateTitle);
         params.putBoolean("canRefresh", canRefresh);
         params.putBoolean("canMakeCall", canMakeCall);
-        IntentUtil.start(activity, WebviewActivity.class, params);
+        IntentUtil.start(activity, WebViewActivity.class, params);
     }
 }

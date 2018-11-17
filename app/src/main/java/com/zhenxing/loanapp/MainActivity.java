@@ -1,12 +1,12 @@
 package com.zhenxing.loanapp;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
+import com.zhenxing.loanapp.base.BaseActivity;
 import com.zhenxing.loanapp.databinding.ActivityMainBinding;
 
-public class MainActivity extends Activity {
+public class MainActivity extends BaseActivity {
     ActivityMainBinding mainBinding;
 
     @Override

@@ -19,3 +19,24 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep public class [com.zhenxing.loanapp].R$*{
+public static final int *;
+}
+-keep class com.umeng.** {*;}
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+#-keep com.squareup.okhttp.**{*;}
+-dontwarn com.squareup.okhttp.**
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class com.lcodecorex.tkrefreshlayout.**{*;}
+-dontwarn com.lcodecorex.tkrefreshlayout.**
