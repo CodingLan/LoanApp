@@ -3,6 +3,30 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colToolbarTitle">@color/white</item>
+        <item name="colToolbar">@color/colorPrimaryDark</item>
+
+    </style>
+    <!-- LinearLayout w:match_parent h:match_parent o:vertical -->
+    <style name="ll_mmv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
+    <!-- 容器样式 -->
+    <style name="container">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- 横分割线 -->
+    <style name="line_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:textSize">@dimen/txt_body</item>
+        <item name="android:background">@color/line_bg</item>
+    </style>
 </resources>

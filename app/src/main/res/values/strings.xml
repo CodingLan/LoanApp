@@ -3,4 +3,6 @@
     <string name="tb_load_loading">加载中</string>
     <string name="tb_load_failed">加载失败</string>
     <string name="tb_load_end">加载完成</string>
+    <string name="network_not_good">当前网络状态不太好</string>
+
 </resources>
