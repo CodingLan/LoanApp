@@ -2,5 +2,4 @@
 <resources>
     <attr name="colToolbarTitle" format="color" />
     <attr name="colToolbar" format="color" />
-    <attr name="actionBarSize" format="dimension" />
 </resources>

@@ -68,6 +68,7 @@ public class WebViewActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
+        getDependData();
         //  initToolbarWithWhiteColor(this.mTitle);
         initView();
         webView.loadUrl(this.mUrl);
@@ -209,7 +210,7 @@ public class WebViewActivity extends BaseActivity {
     //@Override
     public boolean getDependData() {
 
-        Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getBundleExtra("params");
         this.mTitle = bundle.getString("title", "");
         this.mUrl = bundle.getString("url", "");
         this.mUpdateTitle = bundle.getBoolean("updateTitle", true);
