@@ -64,8 +64,8 @@ android {
            }*/
         release {
             debuggable true
-            zipAlignEnabled false
-            minifyEnabled false
+            zipAlignEnabled true
+            minifyEnabled true
             /*debuggable false
             zipAlignEnabled true
             minifyEnabled true*/

@@ -2,11 +2,13 @@ package com.zhenxing.loanapp.service;
 
 import com.zhenxing.loanapp.bean.AdvertisementBean;
 import com.zhenxing.loanapp.bean.BaseBean;
+import com.zhenxing.loanapp.bean.LoanBean;
 import com.zhenxing.loanapp.util.RetrofitUtil;
 
 import java.util.List;
 
 import io.reactivex.Observable;
+import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -25,30 +27,24 @@ public interface UserService {
      */
     static UserService getInstance() {
         return RetrofitUtil.getInstance()
-                           .getRetrofit()
-                           .create(UserService.class);
+                .getRetrofit()
+                .create(UserService.class);
     }
 
     /**
-     * 各币种总资产信息
+     * 获取列表数据
+     * type：1  banner     2：normal
      *
      * @return
      */
     @FormUrlEncoded
-    @POST ( "getBannerList" )
-    Observable<BaseBean<String>> getBannerList();
+    @POST("api/getBannerAll")
+    Observable<BaseBean<List<LoanBean>>> getBannerList(@Field("type") int type);
 
-    /**
-     * 各账户（不包括主账户）资产明细信息
-     *
-     * @return
-     */
-    @POST ( "getNormalList" )
-    Observable<BaseBean<String>> getNormalList(int pageIndex, int pageSize);
 
     @GET("/otc/post/list/online")
     Observable<BaseBean<List<AdvertisementBean>>> getOrdersList(@Query("type") int type
-    , @Query("pageNo")int pageNo
-    , @Query("currencyId") int currencyId
-    , @Query("pageSize")int pageSize);
+            , @Query("pageNo") int pageNo
+            , @Query("currencyId") int currencyId
+            , @Query("pageSize") int pageSize);
 }

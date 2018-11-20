@@ -10,4 +10,10 @@
     <color name="text_desc">#B1BFD6</color>
     <color name="color_depth_amount">#899dbe</color>
     <color name="text_content">#666666</color>
+
+    <color name="color_first">#333333</color>
+    <color name="color_second">#666666</color>
+    <color name="color_third">#999999</color>
+    <color name="color_line">#dddddd</color>
+    <color name="color_red">#ff0000</color>
 </resources>

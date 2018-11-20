@@ -19,9 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep public class [com.zhenxing.loanapp].R$*{
-public static final int *;
-}
+#-keep public class [com.zhenxing.loanapp].R$*{
+#public static final int *;
+#}
 -keep class com.umeng.** {*;}
 -keepclassmembers class * {
    public <init> (org.json.JSONObject);
@@ -47,3 +47,8 @@ public static final int *;
 -dontwarn okio.**
 -dontwarn rx.**
 -dontwarn com.google.protobuf.**
+
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**

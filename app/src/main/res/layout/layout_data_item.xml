@@ -10,13 +10,101 @@
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:background="@color/white"
+        android:layout_height="95dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@color/Blue" />
+
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgView"
+            android:text="榕树" android:layout_marginRight="@dimen/dp_5"
+            android:textColor="@color/color_first"
+            android:textSize="@dimen/txt_first" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_toRightOf="@id/nameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="@drawable/bg_red"
+                android:text="新"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_forth"
+                android:paddingLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_3"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="@drawable/bg_gray"
+                android:text="大额低息"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_forth"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_3" android:layout_marginRight="@dimen/dp_5"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="@drawable/bg_gray"
+                android:text="自动审批"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_forth"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_3"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/maxView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imgView"
+            android:text="最高5万元"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/txt_second" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="1111"
-            android:textSize="20sp" />
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/maxView"
+            android:text="日利率0.04%起"
+            android:textColor="@color/color_second"
+            android:textSize="@dimen/txt_second" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/imgView"
+            android:text="仅需身份证，1分钟放款"
+            android:textColor="@color/color_third"
+            android:textSize="@dimen/txt_second" />
     </RelativeLayout>
 </layout>
