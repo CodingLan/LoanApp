@@ -15,6 +15,7 @@ import com.zhenxing.loanapp.adapter.TBRecyclerAdapter;
 import com.zhenxing.loanapp.adapter.TBViewHolder;
 import com.zhenxing.loanapp.bean.AdvertisementBean;
 import com.zhenxing.loanapp.bean.BaseBean;
+import com.zhenxing.loanapp.bean.LoanBean;
 import com.zhenxing.loanapp.http.NetResponseObserver;
 import com.zhenxing.loanapp.service.UserService;
 import com.zhenxing.loanapp.util.TBImageLoader;
@@ -50,9 +51,16 @@ public class RecordFragment extends TableFragment {
         getRecyclerView().setLayoutManager(new LinearLayoutManager(getActivity()));
         getRecyclerView().addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         TBRecyclerAdapter adapter = new TBDataBindingAdapter(getContext(), R.layout.layout_data_item, BR.item,
-                new ArrayList());
+            new ArrayList()){
+            @Override
+            public void onBindViewHolder(TBViewHolder holder, int position) {
+                super.onBindViewHolder(holder, position);
+
+            }
+        };
         adapter.setOnItemClickListener((adapter1, view, position) -> {
-            WebViewActivity.start(getContext(), "https://www.jd.com/", "test", true);
+            WebViewActivity.start(getContext(), ((LoanBean)adapter.getDataList().get(position)).getWebUrl(), "test",
+                true);
         });
         setAdapter(adapter);
         reset();
@@ -71,11 +79,9 @@ public class RecordFragment extends TableFragment {
     }
 
     private void setupList(int pageIndex) {
-
-        //UserService.getInstance().getNormalList(pageIndex, 20)
-        UserService.getInstance().getOrdersList(2, pageIndex, 24, 20)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new TableNetResponseObserver<>(this));
+        UserService.getInstance().getBannerList(2)
+                   .subscribeOn(Schedulers.io())
+                   .observeOn(AndroidSchedulers.mainThread())
+                   .subscribe(new TableNetResponseObserver<>(this));
     }
 }

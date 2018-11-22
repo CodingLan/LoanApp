@@ -8,10 +8,10 @@ public class LoanBean implements Serializable {
 
     private int rank;
     private double max;
-    private int isNew;
-    private int isCheckCredit;
+    private int isNew;//1:是新品   0：非新品
+    private int isCheckCredit;//1:需查征信   0：不查征信
     private String desp;
-    private String imgUrl;
+    private String imageUrl;
     private String webUrl;
 
     public String getTitle() {
@@ -62,12 +62,12 @@ public class LoanBean implements Serializable {
         this.desp = desp;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getWebUrl() {
