@@ -1,6 +1,12 @@
 package com.zhenxing.loanapp.util;
 
 public class ConstantUtil {
+
+    public static final int BANNER_DATA = 1;
+    public static final int NORMAL_DATA = 2;
+
+    public static final int IMAGE_WIDTH = 70;
+
     public static class HttpCode {
         /**
          * 成功

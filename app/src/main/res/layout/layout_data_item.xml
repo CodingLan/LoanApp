@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -15,7 +15,7 @@
                     android:padding="10dp">
 
         <ImageView
-            android:id="@+id/imgView"
+            android:id="@+id/imageView"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_centerVertical="true"
@@ -28,10 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/dp_5"
-            android:layout_toRightOf="@id/imgView"
-            android:text="榕树"
+            android:layout_toRightOf="@id/imageView"
             android:textColor="@color/color_first"
-            android:textSize="@dimen/txt_first" />
+            android:textSize="@dimen/txt_first"
+            tools:text="榕树" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,6 +40,7 @@
             android:layout_toRightOf="@id/nameView">
 
             <TextView
+                android:id="@+id/newView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_5"
@@ -53,6 +54,21 @@
                 android:textSize="@dimen/txt_forth" />
 
             <TextView
+                android:id="@+id/checkCreditView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_5"
+                android:background="@drawable/bg_gray"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingTop="2dp"
+                android:paddingRight="@dimen/dp_3"
+                android:paddingBottom="2dp"
+                android:text="查征信"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_forth" />
+
+            <TextView
+                android:id="@+id/maxLowFeeView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_5"
@@ -66,6 +82,7 @@
                 android:textSize="@dimen/txt_forth" />
 
             <TextView
+                android:id="@+id/autoApprovalView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_gray"
@@ -83,27 +100,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/imgView"
-            android:text="最高5万元"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_toRightOf="@id/imageView"
             android:textColor="#ff0000"
-            android:textSize="@dimen/txt_second" />
+            android:textSize="@dimen/txt_second"
+            tools:text="最高5万元" />
 
         <TextView
+            android:id="@+id/feeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/maxView"
-            android:text="日利率0.04%起"
             android:textColor="@color/color_second"
-            android:textSize="@dimen/txt_second" />
+            android:textSize="@dimen/txt_second"
+            tools:text="日利率0.04%起" />
 
         <TextView
+            android:id="@+id/despView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@id/imgView"
-            android:text="仅需身份证，1分钟放款"
+            android:layout_toRightOf="@id/imageView"
             android:textColor="@color/color_third"
-            android:textSize="@dimen/txt_second" />
+            android:textSize="@dimen/txt_second"
+            tools:text="仅需身份证，1分钟放款" />
     </RelativeLayout>
 </layout>

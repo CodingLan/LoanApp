@@ -3,13 +3,11 @@ package com.zhenxing.loanapp;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 import com.zhenxing.loanapp.activity.WebViewActivity;
 import com.zhenxing.loanapp.adapter.TBDataBindingAdapter;
-import com.zhenxing.loanapp.adapter.TBRecyclerAdapter;
 import com.zhenxing.loanapp.adapter.TBViewHolder;
 import com.zhenxing.loanapp.base.BaseActivity;
 import com.zhenxing.loanapp.bean.BaseBean;
@@ -20,6 +18,7 @@ import com.zhenxing.loanapp.http.NetResponseObserver;
 import com.zhenxing.loanapp.image.ImageOption;
 import com.zhenxing.loanapp.image.ImageOption.Builder;
 import com.zhenxing.loanapp.service.UserService;
+import com.zhenxing.loanapp.util.ConstantUtil;
 import com.zhenxing.loanapp.util.TBImageLoader;
 
 import java.util.List;
@@ -54,8 +53,7 @@ public class MainActivity extends BaseActivity {
 
     private void initView() {
 
-        UserService.getInstance().getBannerList(1)
-                   //UserService.getInstance().getOrdersList(2, 1, 24, 20)
+        UserService.getInstance().getBannerList(ConstantUtil.BANNER_DATA)
                    .subscribeOn(Schedulers.io())
                    .observeOn(AndroidSchedulers.mainThread())
                    .subscribe(new NetResponseObserver<BaseBean<List<LoanBean>>>(this) {
@@ -75,25 +73,25 @@ public class MainActivity extends BaseActivity {
                                            ImageOption imageOption = new Builder(MainActivity.this)
                                                .placeholder(TBImageLoader.getPlaceholder())
                                                .error(TBImageLoader.getErrorDrawable())
-                                               .targetSize(65, 65)
+                                               .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_WIDTH)
                                                .scaleType(ScaleType.CENTER_INSIDE)
                                                .build();
-                                           //String imgUrl = "https://img.rong360.com/3e9/1b7d3/cimg/59/59e716e4059c3f2364acfcf3b5df4a53d5ead1c0_230x140.jpeg";
                                            TBImageLoader.get().loadImage(imgView,
                                                data.get(position).getImageUrl(),
-                                               imageOption);// data.get(position).getImgUrl());
+                                               imageOption);
                                            holder.setText(R.id.nameView, data.get(position).getTitle());
                                            holder.setText(R.id.despView, data.get(position).getDesp());
                                        }
                                    };
 
-                               adapter.setOnItemClickListener(new TBRecyclerAdapter.OnItemClickListener() {
-                                   @Override
-                                   public void onItemClick(TBRecyclerAdapter adapter, View view, int position) {
-                                       WebViewActivity.start(MainActivity.this, ((LoanBean)adapter.getDataList().get(
-                                           position)).getWebUrl(), "test", true);
-                                   }
-                               });
+                               adapter.setOnItemClickListener(
+                                   (adapter1, view, position) ->
+                                   {
+                                       LoanBean item = (LoanBean)data.get(position);
+
+                                       WebViewActivity.start(MainActivity.this, item.getWebUrl(), item.getTitle(),
+                                           true);
+                                   });
 
                                mainBinding.bannerView.setAdapter(adapter);
                            }

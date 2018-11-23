@@ -11,29 +11,37 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/dp_5"
                   android:gravity="center_horizontal"
-                  android:orientation="vertical">
+                  android:orientation="vertical"
+                  android:padding="@dimen/dp_5">
 
         <ImageView
             android:id="@+id/imgView"
-            android:layout_width="65dp"
-            android:layout_height="65dp" />
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
 
         <TextView
             android:id="@+id/nameView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="80dp"
             android:text="巴拉钱包"
             android:textColor="@color/color_first"
-            android:textSize="@dimen/txt_first" />
+            android:textSize="@dimen/txt_second" />
 
         <TextView
             android:id="@+id/despView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="80dp"
             android:text="最高6000元"
             android:textColor="@color/color_red"
-            android:textSize="@dimen/txt_first" />
+            android:textSize="@dimen/txt_second" />
     </LinearLayout>
 </layout>

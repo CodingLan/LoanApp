@@ -4,14 +4,54 @@ import java.io.Serializable;
 
 public class LoanBean implements Serializable {
 
+    public static final int isTrue = 1;
+
+    /**
+     * 产品名称
+     */
     private String title;
 
+    /**
+     * 排名
+     */
     private int rank;
+    /**
+     * 利率
+     */
+    private double rate;
+    /**
+     * 是否自动审批,1:自动  0：非自动审批
+     */
+    private int autoApproval;
+    /**
+     * 最高可借
+     */
     private double max;
-    private int isNew;//1:是新品   0：非新品
-    private int isCheckCredit;//1:需查征信   0：不查征信
+    /**
+     * 是否是新品，1:是新品   0：非新品
+     */
+    private int isNew;
+
+    /**
+     * 是否大额低息，1:是   0：否
+     */
+    private int isMaxLowFee;
+
+    /**
+     * 是否查征信，1:需查征信   0：不查征信
+     */
+    private int isCheckCredit;
+    /**
+     * 描述
+     */
     private String desp;
+    /**
+     * 图片地址
+     */
     private String imageUrl;
+    /**
+     * 跳转网页地址
+     */
     private String webUrl;
 
     public String getTitle() {
@@ -78,5 +118,28 @@ public class LoanBean implements Serializable {
         this.webUrl = webUrl;
     }
 
+    public double getRate() {
 
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public void setAutoApproval(int autoApproval) {
+        this.autoApproval = autoApproval;
+    }
+
+    public int getAutoApproval() {
+        return autoApproval;
+    }
+
+    public int getIsMaxLowFee() {
+        return isMaxLowFee;
+    }
+
+    public void setIsMaxLowFee(int isMaxLowFee) {
+        this.isMaxLowFee = isMaxLowFee;
+    }
 }
