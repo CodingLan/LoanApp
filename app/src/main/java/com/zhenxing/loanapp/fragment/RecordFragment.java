@@ -75,7 +75,7 @@ public class RecordFragment extends TableFragment {
                         getResources().getString(R.string.max_borrow, String.valueOf(data.getMax())));
                     holder.setText(R.id.feeView,
                         getResources().getString(R.string.fee, String.valueOf(data.getRate())));
-                    holder.setVisible(R.id.autoApprovalView, data.getAutoApproval() == LoanBean.isTrue);
+                    holder.setVisible(R.id.autoApprovalView, data.getIsAutoApproval() == LoanBean.isTrue);
                     holder.setVisible(R.id.checkCreditView, data.getIsCheckCredit() == LoanBean.isTrue);
                     holder.setVisible(R.id.newView, data.getIsNew() == LoanBean.isTrue);
                     holder.setVisible(R.id.maxLowFeeView, data.getIsMaxLowFee() == LoanBean.isTrue);
@@ -83,7 +83,7 @@ public class RecordFragment extends TableFragment {
                     ImageOption imageOption = new Builder(getContext())
                         .placeholder(TBImageLoader.getPlaceholder())
                         .error(TBImageLoader.getErrorDrawable())
-                        .targetSize(65, 65)
+                        .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_WIDTH)
                         .scaleType(ScaleType.CENTER_INSIDE)
                         .build();
                     TBImageLoader.get().loadImage(imageView,

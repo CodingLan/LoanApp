@@ -76,8 +76,10 @@ public class MainActivity extends BaseActivity {
                                                .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_WIDTH)
                                                .scaleType(ScaleType.CENTER_INSIDE)
                                                .build();
+
+                                           String url="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=390610377,145671822&fm=85&s=4D14C410086126015898C4C7030030AF";
                                            TBImageLoader.get().loadImage(imgView,
-                                               data.get(position).getImageUrl(),
+                                                   url,//  data.get(position).getImageUrl(),
                                                imageOption);
                                            holder.setText(R.id.nameView, data.get(position).getTitle());
                                            holder.setText(R.id.despView, data.get(position).getDesp());
