@@ -22,6 +22,10 @@
 #-keep public class [com.zhenxing.loanapp].R$*{
 #public static final int *;
 #}
+
+-keep interface com.zhenxing.loanapp.bean.** { *; }
+
+
 -keep class com.umeng.** {*;}
 -keepclassmembers class * {
    public <init> (org.json.JSONObject);

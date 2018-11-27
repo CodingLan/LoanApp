@@ -20,8 +20,8 @@ android {
             storeFile file(signingPath)
             storePassword 'chaizhenxing'
             //作用是只使用旧版签名，禁用V2版签名模式
-            v2SigningEnabled true
-            v1SigningEnabled true
+            //v2SigningEnabled true
+            //v1SigningEnabled true
         }
     }
 
@@ -59,7 +59,7 @@ android {
     buildTypes {
 
         release {
-            debuggable false
+            debuggable true
             zipAlignEnabled true
             minifyEnabled true
 
