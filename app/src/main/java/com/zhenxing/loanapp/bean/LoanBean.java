@@ -19,10 +19,11 @@ public class LoanBean implements Serializable {
      * 利率
      */
     private double rate;
+
     /**
      * 是否自动审批,1:自动  0：非自动审批
      */
-    private int autoApproval;
+    private int isAutoApproval;
     /**
      * 最高可借
      */
@@ -127,12 +128,14 @@ public class LoanBean implements Serializable {
         this.rate = rate;
     }
 
-    public void setAutoApproval(int autoApproval) {
-        this.autoApproval = autoApproval;
+
+
+    public int getIsAutoApproval() {
+        return isAutoApproval;
     }
 
-    public int getAutoApproval() {
-        return autoApproval;
+    public void setIsAutoApproval(int isAutoApproval) {
+        this.isAutoApproval = isAutoApproval;
     }
 
     public int getIsMaxLowFee() {

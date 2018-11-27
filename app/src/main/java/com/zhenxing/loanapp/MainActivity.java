@@ -76,8 +76,7 @@ public class MainActivity extends BaseActivity {
                                                .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_WIDTH)
                                                .scaleType(ScaleType.CENTER_INSIDE)
                                                .build();
-
-                                           //String str="http://img03.tooopen.com/uploadfile/downs/images/20110714/sy_20110714135215645030.jpg";
+                                           // String url="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=390610377,145671822&fm=85&s=4D14C410086126015898C4C7030030AF";
                                            TBImageLoader.get().loadImage(imgView,
                                                data.get(position).getImageUrl(),
                                                imageOption);
