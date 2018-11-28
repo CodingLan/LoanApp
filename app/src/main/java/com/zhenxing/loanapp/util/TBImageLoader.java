@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
@@ -21,6 +22,7 @@ import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Transformation;
 import com.zhenxing.loanapp.BuildConfig;
 import com.zhenxing.loanapp.image.ImageOption;
+import com.zhenxing.loanapp.image.ImageRoundTransform;
 import com.zhenxing.loanapp.image.RoundTransform;
 
 import java.io.IOException;
@@ -156,7 +158,9 @@ public class TBImageLoader {
      * @param option
      */
     public void loadImage(ImageView imageView, String url, ImageOption option) {
-        loadImage(imageView, url, option, null);
+        if (!TextUtils.isEmpty(url)) {
+            loadImage(imageView, url, option, null);
+        }
     }
 
     /**
@@ -177,7 +181,7 @@ public class TBImageLoader {
     private void loadImage(ImageView imageView, String url, Drawable placeholderDrawable, Drawable errorDrawable
         , int targetWidth, int targetHeight, float radius, ScaleType scaleType,
         List<Transformation> transformationList, Callback callback, boolean skipMemory) {
-        RequestCreator requestCreator = Picasso.with(imageView.getContext()).load(url);
+        RequestCreator requestCreator;// = Picasso.with(imageView.getContext()).load(url);
         if (skipMemory) {
             requestCreator = Picasso.with(imageView.getContext())
                                     .load(url)
@@ -211,7 +215,7 @@ public class TBImageLoader {
             requestCreator.resize(targetWidth, targetHeight);
         }
         if (radius != 0) {
-            requestCreator.transform(new RoundTransform(radius));
+            requestCreator.transform(new ImageRoundTransform(imageView.getContext(), (int)radius));
         }
 
         if (transformationList != null) {

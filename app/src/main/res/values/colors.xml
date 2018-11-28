@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="text_title">#333333</color>
-    <color name="line_bg">#EFF2F5</color>
+    <color name="line_bg">#eeeeee</color>
     <color name="toast_color">#B2111522</color>
     <color name="text_desc">#B1BFD6</color>
     <color name="color_depth_amount">#899dbe</color>
@@ -14,7 +14,7 @@
     <color name="color_first">#333333</color>
     <color name="color_second">#666666</color>
     <color name="color_third">#999999</color>
-    <color name="color_line">#dddddd</color>
+    <color name="color_line">#eeeeee</color>
     <color name="color_red">#ff0000</color>
     <color name="transparent">#00ffffff</color>
 </resources>

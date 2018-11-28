@@ -5,7 +5,6 @@
         <!-- Customize your theme here. -->
         <item name="colToolbarTitle">@color/white</item>
         <item name="colToolbar">@color/colorPrimaryDark</item>
-
     </style>
     <!-- LinearLayout w:match_parent h:match_parent o:vertical -->
     <style name="ll_mmv">

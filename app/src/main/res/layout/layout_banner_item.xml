@@ -19,7 +19,8 @@
         <ImageView
             android:id="@+id/imgView"
             android:layout_width="70dp"
-            android:layout_height="70dp" />
+            android:layout_height="70dp"
+            android:src="@color/line_bg" />
 
         <TextView
             android:id="@+id/nameView"

@@ -34,10 +34,23 @@ android {
     }
 
     productFlavors {
-        kuan {
+        huawei {
             dimension "loan"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "kuan"]
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
         }
+        yingyongbao {
+            dimension "loan"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "yingyongbao"]
+        }
+        vivo {
+            dimension "loan"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "vivo"]
+        }
+        oppo {
+            dimension "loan"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "oppo"]
+        }
+
         xiaomi {
             dimension "loan"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
@@ -50,13 +63,18 @@ android {
             dimension "loan"
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
         }
-        wandoujia {
-            dimension "loan"
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
-        }
     }
 
     buildTypes {
+
+        debug {
+            debuggable true
+            zipAlignEnabled false
+            minifyEnabled false
+
+            signingConfig signingConfigs.release
+        }
+
 
         release {
             debuggable false

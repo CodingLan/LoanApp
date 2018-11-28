@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_15"
-            android:src="@color/Blue" />
+            android:src="@color/line_bg" />
 
         <TextView
             android:id="@+id/nameView"
