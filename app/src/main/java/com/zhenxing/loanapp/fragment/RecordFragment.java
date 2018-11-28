@@ -69,6 +69,7 @@ public class RecordFragment extends TableFragment {
                         getResources().getString(R.string.max_borrow, String.valueOf(data.getMax())));
                     holder.setText(R.id.feeView,
                         getResources().getString(R.string.fee, String.valueOf(data.getRate())));
+
                     holder.setVisible(R.id.autoApprovalView, data.getIsAutoApproval() == LoanBean.isTrue);
                     holder.setVisible(R.id.checkCreditView, data.getIsCheckCredit() == LoanBean.isTrue);
                     holder.setVisible(R.id.newView, data.getIsNew() == LoanBean.isTrue);

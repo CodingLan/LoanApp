@@ -24,12 +24,19 @@
 #}
 
 -keep interface com.zhenxing.loanapp.bean.** { *; }
-
-
+-keep class com.zhenxing.loanapp.bean.** { *; }
+-keep class android.os.MessageQueue.**{*;}
+-keep class com.zhenxing.loanapp.adapter.**{*;}
 -keep class com.umeng.** {*;}
 -keepclassmembers class * {
    public <init> (org.json.JSONObject);
 }
+
+-keep public class **.R$*{
+   public static final int *;
+}
+
+-keepattributes *Annotation*
 
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
@@ -56,3 +63,12 @@
 -dontwarn okio.**
 -dontwarn javax.annotation.**
 -dontwarn org.conscrypt.**
+
+# xml 中的 onClick 属性对应的方法
+ -keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+ }
+
+ -keepclassmembers class fqcn.of.javascript.interface.for.webview {
+    public *;
+ }

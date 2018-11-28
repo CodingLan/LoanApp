@@ -69,7 +69,7 @@ public class WebViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         getDependData();
-        //  initToolbarWithWhiteColor(this.mTitle);
+        //initToolbarWithWhiteColor(this.mTitle);
         initView();
         webView.loadUrl(this.mUrl);
     }
