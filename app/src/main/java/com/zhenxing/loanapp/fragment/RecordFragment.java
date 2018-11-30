@@ -1,14 +1,11 @@
 package com.zhenxing.loanapp.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.lcodecore.tkrefreshlayout.utils.DensityUtil;
 import com.zhenxing.loanapp.BR;
-import com.zhenxing.loanapp.MainActivity;
 import com.zhenxing.loanapp.R;
 import com.zhenxing.loanapp.activity.WebViewActivity;
 import com.zhenxing.loanapp.adapter.TBDataBindingAdapter;
@@ -51,7 +48,7 @@ public class RecordFragment extends TableFragment {
     protected void onInitTableView() {
         super.onInitTableView();
         getRecyclerView().setLayoutManager(new LinearLayoutManager(getActivity()));
-        getRecyclerView().addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+        //getRecyclerView().addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
 
         adapter = new TBDataBindingAdapter(getContext(), R.layout.layout_data_item, BR.item,
             new ArrayList()) {
@@ -81,7 +78,7 @@ public class RecordFragment extends TableFragment {
                         .placeholder(TBImageLoader.getPlaceholder())
                         //.radius(DensityUtil.px2dp(getContext(), 10))
                         .error(TBImageLoader.getErrorDrawable())
-                        .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_WIDTH)
+                        .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_HEIGHT)
                         .scaleType(ScaleType.CENTER_INSIDE)
                         .build();
                     TBImageLoader.get().loadImage(imageView,

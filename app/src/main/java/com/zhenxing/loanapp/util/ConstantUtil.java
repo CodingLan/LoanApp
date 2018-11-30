@@ -5,7 +5,9 @@ public class ConstantUtil {
     public static final int BANNER_DATA = 1;
     public static final int NORMAL_DATA = 2;
 
-    public static final int IMAGE_WIDTH = 70;
+    public static final int IMAGE_WIDTH = 125;
+    public static final int IMAGE_HEIGHT = 80;
+    public static final int IMAGE_SIZE = 70;
 
     public static class HttpCode {
         /**

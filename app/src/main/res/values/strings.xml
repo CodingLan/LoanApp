@@ -14,4 +14,7 @@
 
     <string name="max_borrow">最高%s元</string>
     <string name="fee">日利率%s起</string>
+
+    <string name="top_text">银行列表</string>
+    <string name="center_text">热门卡片</string>
 </resources>
