@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.lcodecore.tkrefreshlayout.utils.DensityUtil;
 import com.zhenxing.loanapp.activity.WebViewActivity;
 import com.zhenxing.loanapp.adapter.TBDataBindingAdapter;
 import com.zhenxing.loanapp.adapter.TBViewHolder;
@@ -128,10 +129,10 @@ public class MainActivity extends BaseActivity {
 
                 ImageOption imageOption = new Builder(MainActivity.this)
                     .placeholder(TBImageLoader.getPlaceholder())
-                    //.radius(DensityUtil.px2dp(MainActivity.this, 30))
+                    .radius(DensityUtil.px2dp(MainActivity.this, ConstantUtil.RADIUS))
                     .error(TBImageLoader.getErrorDrawable())
                     .targetSize(ConstantUtil.IMAGE_SIZE, ConstantUtil.IMAGE_SIZE)
-                    .scaleType(ScaleType.CENTER_INSIDE)
+                    .scaleType(ScaleType.FIT_XY)
                     .build();
                 TBImageLoader.get().loadImage(imgView,
                     data.getImageUrl(),

@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import android.widget.ImageView.ScaleType;
 
 import com.squareup.picasso.Transformation;
+import com.zhenxing.loanapp.R;
 
 import java.util.List;
 
@@ -122,7 +123,9 @@ public class ImageOption {
          * @return
          */
         public Builder placeholder(Drawable placeholderDrawable) {
-            this.placeholderDrawable = placeholderDrawable;
+            // ContextCompat.getDrawable(context, R.drawable.bg_round);
+            this.placeholderDrawable = ContextCompat.getDrawable(context, R.drawable.bg_round);
+            // placeholderDrawable;
             return this;
         }
 
@@ -133,7 +136,8 @@ public class ImageOption {
          * @return
          */
         public Builder error(Drawable errorDrawable) {
-            this.errorDrawable = errorDrawable;
+            this.errorDrawable = ContextCompat.getDrawable(context, R.drawable.bg_round);
+            // errorDrawable;
             return this;
         }
 
@@ -195,6 +199,7 @@ public class ImageOption {
 
         /**
          * 跳过缓存
+         *
          * @param skipMemory
          * @return
          */

@@ -2,9 +2,11 @@ package com.zhenxing.loanapp.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.lcodecore.tkrefreshlayout.utils.DensityUtil;
 import com.zhenxing.loanapp.BR;
 import com.zhenxing.loanapp.R;
 import com.zhenxing.loanapp.activity.WebViewActivity;
@@ -76,10 +78,10 @@ public class RecordFragment extends TableFragment {
 
                     ImageOption imageOption = new Builder(getContext())
                         .placeholder(TBImageLoader.getPlaceholder())
-                        //.radius(DensityUtil.px2dp(getContext(), 10))
+                        .radius(DensityUtil.px2dp(getContext(), ConstantUtil.RADIUS))
                         .error(TBImageLoader.getErrorDrawable())
                         .targetSize(ConstantUtil.IMAGE_WIDTH, ConstantUtil.IMAGE_HEIGHT)
-                        .scaleType(ScaleType.CENTER_INSIDE)
+                        .scaleType(ScaleType.FIT_XY)
                         .build();
                     TBImageLoader.get().loadImage(imageView,
                         data.getImageUrl(),
@@ -89,8 +91,11 @@ public class RecordFragment extends TableFragment {
         };
         adapter.setOnItemClickListener((adapter1, view, position) -> {
             LoanBean item = (LoanBean)adapter1.getItem(position);
-            WebViewActivity.start(getContext(), item.getWebUrl(), item.getTitle(),
-                true);
+
+            if (!TextUtils.isEmpty(item.getImageUrl())) {
+                WebViewActivity.start(getContext(), item.getWebUrl(), item.getTitle(),
+                    true);
+            }
         });
         setAdapter(adapter);
         reset();

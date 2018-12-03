@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_15"
             android:layout_marginRight="@dimen/dp_10"
-            android:src="@color/line_bg" />
+            android:src="@drawable/bg_round" />
 
         <TextView
             android:id="@+id/nameView"
@@ -30,7 +30,7 @@
             android:layout_marginRight="@dimen/dp_15"
             android:layout_toRightOf="@id/imageView"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="1"
             android:textColor="@color/color_first"
             android:textSize="@dimen/txt_first"
             tools:text="榕树ssdsdfsf发是舒服舒服 是 史蒂夫fsdfsfsfsfsfssfsfsf" />
@@ -125,12 +125,16 @@
             android:id="@+id/despView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/nameView"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_15"
             android:layout_marginBottom="@dimen/dp_15"
             android:layout_toRightOf="@id/imageView"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textColor="@color/color_third"
             android:textSize="@dimen/txt_second"
-            tools:text="仅需身份证，1分钟放款" />
+            tools:text="仅需身份证，1分钟放款颠倒是非身上dsdssssscsd撒史蒂夫发放 艾弗森" />
 
         <View
             android:layout_width="match_parent"

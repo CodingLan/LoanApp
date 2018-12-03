@@ -9,6 +9,8 @@ public class ConstantUtil {
     public static final int IMAGE_HEIGHT = 80;
     public static final int IMAGE_SIZE = 70;
 
+    public static final int RADIUS=14;
+
     public static class HttpCode {
         /**
          * 成功

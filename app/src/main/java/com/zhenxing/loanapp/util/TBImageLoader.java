@@ -45,6 +45,7 @@ public class TBImageLoader {
      */
     public static final Drawable getPlaceholder() {
         return new ColorDrawable(Color.parseColor("#eeeeee"));
+        //return   new ColorDrawable(Color.parseColor("#eeeeee"));
     }
 
     /**
