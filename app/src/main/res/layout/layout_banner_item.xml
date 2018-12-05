@@ -32,7 +32,7 @@
             android:maxWidth="80dp"
             android:text="巴拉钱包"
             android:textColor="@color/color_first"
-            android:textSize="@dimen/txt_second" />
+            android:textSize="@dimen/txt_first" />
 
         <TextView
             android:id="@+id/despView"

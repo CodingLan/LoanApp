@@ -11,6 +11,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 
 import com.squareup.picasso.Transformation;
+import com.zhenxing.loanapp.R;
 
 public class ImageRoundTransform implements Transformation {
 
@@ -36,6 +37,7 @@ public class ImageRoundTransform implements Transformation {
         Canvas canvas = new Canvas(output);
         Paint paintColor = new Paint();
         paintColor.setFlags(Paint.ANTI_ALIAS_FLAG);
+        paintColor.setColor(mContext.getResources().getColor(R.color.white));
 
         RectF rectF = new RectF(new Rect(0, 0, widthLight, heightLight));
 
