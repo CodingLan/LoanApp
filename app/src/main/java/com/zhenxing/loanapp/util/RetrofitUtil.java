@@ -37,8 +37,8 @@ public class RetrofitUtil {
     String TAG = "RetrofitUtil";
 
     private static boolean PRINT_LOG = false;
-    private static String BASE_URL="http://47.101.53.90:8080";
-    //private static String BASE_URL = "https://c2capi.58coin.com";
+    //private static String BASE_URL="http://47.101.53.90:8080";
+    private static String BASE_URL = "http://188.131.205.85:8081";
 
     //币币
     private Retrofit mRetrofit = null;
